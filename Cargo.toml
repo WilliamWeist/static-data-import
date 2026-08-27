@@ -1,0 +1,24 @@
+[package]
+name = "sdi"
+version = "0.1.0"
+edition = "2024"
+authors = ["William Weist <wiweist@gmail.com>"]
+description = "sdi is a command-line tool that downloads CCP's EVE Online Static Data Export, parses it, and loads it into a local SQLite database"
+license = "MIT"
+repository = "https://github.com/WilliamWeist/static-data-import"
+keywords = ["eve-online", "sde", "sqlite", "rusqlite"]
+
+[dependencies]
+# ERROR HANDLING
+anyhow = "1.0.104"
+# HTTP COMMUNICATION
+reqwest = { version = "0.13.4", features = ["blocking"] }
+# SERIALIZATION & DESERIALIZATION
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+# OS AGNOSTIC TEMP DIRECTORY HANDLING
+tempfile = "3.27.0"
+# FILE COMPRESSION
+zip-extensions = "0.14.1"
+# DB Interaction
+rusqlite = { version = "0.40.2", features = ["bundled"] }
