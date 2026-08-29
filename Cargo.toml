@@ -1,6 +1,6 @@
 [package]
 name = "sdi"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["William Weist <wiweist@gmail.com>"]
 description = "sdi is a command-line tool that downloads CCP's EVE Online Static Data Export, parses it, and loads it into a local SQLite database"

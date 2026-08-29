@@ -53,3 +53,10 @@ pub(crate) fn initialize_database(db: &Connection) -> Result<()> {
 
     Ok(())
 }
+
+pub(crate) fn clean_database(db: &Connection) -> Result<()> {
+    db.execute_batch(include_str!("SQL/03 - PRAGMA.sql"))
+        .context("Updating PRAGMA options")?;
+
+    Ok(())
+}

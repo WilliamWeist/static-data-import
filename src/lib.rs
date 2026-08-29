@@ -36,6 +36,7 @@ pub fn update(tmp_dir: &TempDir) -> Result<()> {
             Connection::open(tmp_db_file).context("Opening/Creating DB file")?;
         db::schema::initialize_database(&db).context("Initializing the database")?;
         db::writer::write_records(&mut db, &sde).context("Writing records to database")?;
+        db::schema::clean_database(&db).context("Updating the database")?;
 
         if let Err(error) = db.close() {
             bail!("closing EVE.db connection: {:#?}", error);
